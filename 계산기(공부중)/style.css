@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrap {
+  display: grid;
+  min-height: 100vh;
+  justify-content: center;
+  grid-template-columns: repeat(4, 60px);
+  grid-auto-rows: 60px;
+  gap: 5px;
+  background: #ddd;
+  padding-top: 20vh;
+}
+
+input {
+  height: 100%;
+  border: 2px solid #777;
+  background: #777;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #777;
+  font-size: 1.1em;
+  background: #eee;
+  cursor: pointer;
+}
+
+#result {
+  grid-column: span 3;
+}
+
+#plus, 
+#minus, 
+#divide, 
+#clear, 
+#caculate, 
+#multiply {
+  background: tomato;
+  color: #fff;
+}
+

@@ -65,3 +65,4 @@ if (savedToDos !== null) {
   // array의 각각의 item을 화면에 보여주기
   parsedToDos.forEach(paintTodo);
 }
+
