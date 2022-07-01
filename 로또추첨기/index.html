@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로또 추첨기</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+    @font-face {
+      font-family: 'IM_Hyemin-Bold';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #eee;
+      font-family: 'IM_Hyemin-Bold';
+    }
+
+    .wrap {
+      width: 350px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    h1 {
+      font-size: 3.2em;
+      font-family: 'Titan One', cursive;
+      letter-spacing: 5px;
+    }
+    h3 {
+      padding-top: 10px;
+      border-top: 2px dashed #333;
+      width: 80%;
+      text-align: center;
+    }
+    .content {
+      display: grid;
+      grid-template-rows: 80px 80px 50px 70px 50px 70px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .start, .replay {
+      align-self: flex-start;
+      justify-self: center;
+      height: 50px;
+      padding: 0 30px;
+      font-family: 'IM_Hyemin-Bold';
+      font-size: 1.5em;
+      color: #fff;
+      background: #7D9D9C;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+    }
+    .replay {
+      display: none;
+    }
+    .start:hover {
+      background: #729291;
+    }
+
+    .result,
+    .bonus {
+      display: flex;
+      justify-content: center;
+      align-self: flex-start;
+    }
+
+    .ball {
+      display: flex;
+      border-radius: 20px;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 2.5px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+
+    .bonus .ball {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+    }
+
+    p {
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="content">
+      <h1>LOTTO</h1>
+      <button id="start" class="start">Start</button>
+      <button id="replay" class="replay">replay</button>
+      <h3>
+        추첨 결과
+      </h3>
+      <div id="result" class="result">
+        <!-- <div class="ball"></div> -->
+      </div>
+      <h3>
+        보너스
+      </h3>
+      <div id="bonus" class="bonus">
+        <!-- <div class="ball"></div> -->
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>
