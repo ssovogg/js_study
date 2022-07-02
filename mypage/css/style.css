@@ -1,0 +1,198 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+body, input, button {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+}
+
+/* 공통 */
+.hidden {
+  display: none;
+}
+
+/* login-wrap */
+.login-wrap {
+  background: url('../images/0.jpg');
+}
+
+.login-wrap .inner {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  padding: 100px 150px;
+  background: #fff;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: 0;
+  font-size: 1.2em;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+.login-form button {
+  display: block;
+  width: 80%;
+  height: 35px;
+  margin-top: 20px;
+  color: #fff;
+  background: #333;
+  border: 0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background: tomato;
+}
+
+/* wrap */
+.wrap {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background: url('../images/1.jpg');
+}
+.wrap .inner {
+  position: relative;
+  height: 90vh;
+  width: 80vw;
+  max-width: 1000px;
+  margin: 30px auto 0;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.now-info {
+  position: absolute;
+  left: 0;
+  top: -25px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.now-weather {
+  font-size: 0.8em;
+  color: #fff;
+  padding-left: 10px;
+}
+
+.now-time {
+  font-weight: 700;
+  color: #fff;
+  padding-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  margin: 0 2%;
+  padding: 20px 30px 10px;
+  border-bottom: 2px solid #333;
+  justify-content: space-between;
+}
+.user-info h1 {
+  word-break: keep-all;
+}
+.user-info button {
+  width: 100px;
+  height: 35px;
+  color: #fff;
+  background: #333;
+  border: 0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.user-info button:hover {
+  background: tomato;
+}
+
+/* 오늘의 명언 */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.content-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #333;
+  padding: 15px 0;
+  width: 95%;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  border-right: 1px solid #eee;
+}
+.quote p {
+  word-break: keep-all;
+  margin-bottom: 10px;
+}
+
+.quote span {
+  font-size: 0.8em;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.link li {}
+.link li a {}
+.link li a:hover {
+  color: tomato;
+}
+
+.todo {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

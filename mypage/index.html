@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mypage</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="login-wrap" class="hidden login-wrap">
+    <div class="inner">
+      <form id="login-form" class="login-form">
+        <input type="text" required minlength="2" maxlength="15" placeholder="이름을 입력해주세요">
+        <button>Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="wrap" class="hidden wrap">
+    <div class="inner">
+      <!-- 현재 정보 -->
+      <div class="now-info">
+        <p class="now-weather">
+          현재 날씨, 기온, 위치 업데이트 예정
+        </p>
+        <p class="now-time">
+          00:00:00
+        </p>
+      </div>
+      <!-- 유저 상태 -->
+      <div class="user-info">
+        <h1 id="greeting"></h1>
+        <button id="log-out">Log Out</button>
+      </div>
+      <div class="content">
+        <div class="content-top">
+          <!-- 오늘의 명언 -->
+          <div class="quote">
+            <p>
+              오늘의 명언
+            </p>
+            <span>
+              by. name
+            </span>
+          </div>
+          <!-- link -->
+          <ul class="link">
+            <li><a href="#">game</a></li>
+            <li><a href="#">game</a></li>
+            <li><a href="#">game</a></li>
+          </ul>
+        </div>
+        <!-- to do list -->
+        <div class="todo">
+          <h2>
+            to do list
+          </h2>
+          <ul>
+            <li>오늘의 할일</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+<script src="login.js"></script>
+
+</html>
