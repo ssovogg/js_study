@@ -9,7 +9,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 ul,
@@ -55,6 +55,7 @@ body, input, button {
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .login-form input {
@@ -67,6 +68,15 @@ body, input, button {
   border-bottom: 1px solid #333;
   text-align: center;
 }
+
+.login-form input:focus {
+  outline: none;
+}
+
+.login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
 .login-form button {
   display: block;
   width: 80%;
@@ -98,6 +108,7 @@ body, input, button {
   margin: 30px auto 0;
   background: #fff;
   border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .now-info {
@@ -118,6 +129,28 @@ body, input, button {
   font-weight: 700;
   color: #fff;
   padding-right: 10px;
+}
+
+.day {
+  position: relative;
+  padding-right: 14px;
+  margin-right: 10px;
+  letter-spacing: 1.2px;
+}
+
+.day::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(15deg);
+  width: 1px;
+  height: 13px;
+  background: #fff;
+}
+
+.clock {
+  letter-spacing: 2.5px;
 }
 
 .user-info {
@@ -190,9 +223,80 @@ body, input, button {
   color: tomato;
 }
 
+
+/* todo list */
 .todo {
   padding-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.todo h2 {
+  padding-bottom: 10px;
+}
+.todo-form {
+  display: flex;
+  padding-bottom: 15px;
+}
+.todo-form input {
+  width: 40vw;
+  border: 0;
+  background: #eee;
+  height: 40px;
+  border-radius: 20px 0 0 20px;
+  text-align: center;
+  font-size: 1.2em;
+
+  /* 커서 깜박임 없애기 */
+  color: transparent;
+  text-shadow: 0 0 0 #333;
+}
+
+.todo-form input:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+.todo-form button {
+  height: 40px;
+  width: 40px;
+  border-radius: 0 20px 20px 0;
+  border: 0;
+  background: #333;
+  color: #fff;
+  font-size: 2em;
+  line-height: 45px;
+  padding-right: 3px;
+  cursor: pointer;
+}
+
+.todo-form button:hover {
+  background: tomato;
+}
+
+.todo-list li {
+  display: block;
+  width: 40vw;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.todo-list li input {
+}
+.todo-list li span {
+}
+.todo-list li button {
+  float: right;
+  width: 20px;
+  height: 20px;
+  background: tomato;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 3px;
+}
+

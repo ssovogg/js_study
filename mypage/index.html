@@ -14,7 +14,7 @@
     <div class="inner">
       <form id="login-form" class="login-form">
         <input type="text" required minlength="2" maxlength="15" placeholder="이름을 입력해주세요">
-        <button>Log In</button>
+        <button>LOGIN</button>
       </form>
     </div>
   </div>
@@ -26,14 +26,15 @@
         <p class="now-weather">
           현재 날씨, 기온, 위치 업데이트 예정
         </p>
-        <p class="now-time">
-          00:00:00
+        <p id="today" class="now-time">
+          <span id="day" class="day"></span>
+          <span id="clock" class="clock"></span>
         </p>
       </div>
       <!-- 유저 상태 -->
       <div class="user-info">
         <h1 id="greeting"></h1>
-        <button id="log-out">Log Out</button>
+        <button id="log-out">Logout</button>
       </div>
       <div class="content">
         <div class="content-top">
@@ -58,8 +59,20 @@
           <h2>
             to do list
           </h2>
-          <ul>
-            <li>오늘의 할일</li>
+          <form id="todo-form" class="todo-form">
+            <input type="text">
+            <button>+</button>
+          </form>
+          <ul class="todo-list">
+            <li>
+              <input type="checkbox">
+              <span>오늘의 할일</span>
+              <button>-</button>
+            <li>
+              <input type="checkbox">
+              <span>오늘의 할일</span>
+              <button>-</button>
+            </li>
           </ul>
         </div>
 
@@ -67,6 +80,7 @@
     </div>
   </div>
 </body>
-<script src="login.js"></script>
+<script src="js/login.js"></script>
+<script src="js/clock.js"></script>
 
 </html>
