@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div id="wrap" class="hidden wrap">
+  <div id="wrap" class="hidden wrap wrapback">
     <div class="inner">
       <!-- 현재 정보 -->
       <div class="now-info">
@@ -39,7 +39,7 @@
       <div class="content">
         <div class="content-top">
           <!-- 오늘의 명언 -->
-          <div class="quote">
+          <div id="quote" class="quote">
             <p>
               오늘의 명언
             </p>
@@ -63,16 +63,7 @@
             <input type="text">
             <button>+</button>
           </form>
-          <ul class="todo-list">
-            <li>
-              <input type="checkbox">
-              <span>오늘의 할일</span>
-              <button>-</button>
-            <li>
-              <input type="checkbox">
-              <span>오늘의 할일</span>
-              <button>-</button>
-            </li>
+          <ul id="todo-list" class="todo-list">
           </ul>
         </div>
 
@@ -82,5 +73,7 @@
 </body>
 <script src="js/login.js"></script>
 <script src="js/clock.js"></script>
+<script src="js/quote.js"></script>
+<script src="js/todo-list.js"></script>
 
 </html>
