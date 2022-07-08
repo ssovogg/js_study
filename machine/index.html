@@ -5,68 +5,127 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Routine MACHINE</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="wrap">
+    <!-- print routine -->
+    <div id="print-list" class="print-list hidden">
+      <h1>Today Routine</h1>
+      <h2 class="title">
+        <span>Routine</span>
+        <span>Time</span>
+      </h2>
+      <ul id="routine-list" class="routine-list">
+      </ul>
+      <h3 class="total-time">
+        <span>total</span>
+        <span>00:00</span>
+      </h3>
+      <button class="save">OK</button>
+    </div>
+
+    <!-- machine -->
     <div class="machine">
-      <h1 class="logo">?? MACHINE</h1>
+      <h1 class="logo">Routine MACHINE</h1>
       <!-- display -->
       <div class="display">
-        <ul class="goods">
+        <ul id="item" class="item">
           <li>
-            <a href="#"><button>100월</button></a>
+            <span class="material-icons">
+              question_answer
+            </span>
+            <input type="button" value="대화"></input>
           </li>
           <li>
-            <a href="#"><button>300원</button></a>
+            <span class="material-icons">
+              restore
+            </span>
+            <input type="button" value="휴식"></input>
           </li>
           <li>
-            <a href="#"><button>500원</button></a>
+            <span class="material-icons">
+              cleaning_services
+            </span>
+            <input type="button" value="방청소"></input>
           </li>
           <li>
-            <a href="#"><button>1000원</button></a>
+            <span class="material-icons">
+              menu_book
+            </span>
+            <input type="button" value="독서"></input>
           </li>
           <li>
-            <a href="#"><button>1200원</button></a>
+            <span class="material-icons">
+              lightbulb_outline
+            </span>
+            <input type="button" value="공부"></input>
           </li>
           <li>
-            <a href="#"><button>1600원</button></a>
+            <span class="material-icons">
+              edit_note
+            </span>
+            <input type="button" value="일기쓰기"></input>
           </li>
           <li>
-            <a href="#"><button>2000원</button></a>
+            <span class="material-icons">
+              self_improvement
+            </span>
+            <input type="button" value="스트레칭"></input>
           </li>
           <li>
-            <a href="#"><button>5000원</button></a>
+            <span class="material-icons">
+              directions_walk
+            </span>
+            <input type="button" value="산책"></input>
           </li>
           <li>
-            <a href="#"><button>10000원</button></a>
+            <span class="material-icons">
+              fitness_center
+            </span>
+            <input type="button" value="운동"></input>
           </li>
         </ul>
       </div>
-      <!-- button -->
-      <div class="button">
-        <input type="text">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>reset</button>
-        <button>0</button>
-        <button>ok</button>
-        <!-- input -->
-        <div class="input"></div>
+      <div class="input">
+        <!-- status -->
+        <div class="status">
+          <p>now</p>
+          <h2 id="now"></h2>
+          <p>total</p>
+          <h2 id="total">00:00</h2>
+          <h3 id="show-item">선택하세요</h3>
+          <p id="show-time" class="time">
+            <span class="h">00</span>
+            <span>:</span>
+            <span class="m">00</span>
+          </p>
+        </div>
+        <!-- setting -->
+        <form id="time-set" class="setting">
+          <p>hour</p>
+          <input class="hour" type="button" value="1">
+          <input class="hour" type="button" value="2">
+          <input class="hour" type="button" value="3">
+          <p>minute</p>
+          <input class="minute" type="button" value="10">
+          <input class="minute" type="button" value="30">
+          <input class="minute" type="button" value="50">
+          <p>+</p>
+          <input id="reset" type="button" value="reset">
+          <input id="add" type="button" value="add">
+          <input id="ok" type="button" value="OK">
+        </form>
       </div>
-      <!-- output -->
-      <button class="output">PUSH</button>
+      <!-- print -->
+      <button id="print" class="print">PRINT</button>
     </div>
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>

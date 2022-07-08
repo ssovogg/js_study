@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+<link rel="stylesheet" href="./Document_files/style.css"></head>
+
+<body>
+  <div class="wrap">
+    <div class="machine">
+      <h1 class="logo">Routine MACHINE</h1>
+      <!-- display -->
+      <div class="display">
+        <ul class="goods">
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>대화</button></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>휴식</button></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>독서</button></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>공부</button></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>일기쓰기</button></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>영양제먹기</button></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>스트레칭</button></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>산책</button></a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:5500/index.html#"><button>운동</button></a>
+          </li>
+        </ul>
+      </div>
+      <div class="input">
+        <!-- status -->
+        <div class="status">
+          <h3>대화</h3>
+          <input class="time " type="text" readonly="" value="30분">
+        </div>
+        <!-- setting -->
+        <div class="setting">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>reset</button>
+          <button>0</button>
+          <button>ok</button>
+        </div>
+      </div>
+      <!-- output -->
+      <button class="output">PUSH</button>
+    </div>
+  </div>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
