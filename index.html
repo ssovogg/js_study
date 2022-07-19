@@ -1,0 +1,152 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snack</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/fbdf0195b9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/today.css">
+  <link rel="stylesheet" href="css/slide.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <h1 class="title">JavaScript Snack</h1>
+    <!-- tab title -->
+    <ul class="tabs">
+      <li data-tab-target="#today" class="active">today</li>
+      <li data-tab-target="#lotto">
+        <span>Lotto</span>
+        <span class="material-icons">local_activity</span>
+      </li>
+      <li data-tab-target="#calculator">
+        <span>계산기</span>
+        <span class="material-icons">calculate</span>
+      </li>
+      <li data-tab-target="#num_game">
+        <span>숫자야구게임</span>
+        <span class="material-icons">sports_baseball</span>
+      </li>
+      <li data-tab-target="#slide">
+        <span>slide</span>
+        <span class="material-icons">collections</span>
+      </li>
+    </ul>
+    <!-- tab container -->
+    <div class="tab_content">
+      <!-- today -->
+      <div id="today" data-tab-content class="active today">
+        <h3>today</h3>
+        <div class="clock">
+          <div class="clock-face">
+            <div class="hand hour_hand"></div>
+            <div class="hand min_hand"></div>
+            <div class="hand second_hand"></div>
+          </div>
+        </div>
+      </div>
+      <!-- lotto -->
+      <div id="lotto" class="lotto" data-tab-content>
+        <h3>Lotto</h3>
+        <div class="inner">
+          <button id="lotto_start">Start</button>
+          <h4>추첨 결과</h4>
+          <div id="lotto_result"></div>
+          <h4>보너스</h4>
+          <div id="lotto_bonus"></div>
+        </div>
+      </div>
+
+      <!-- calculator -->
+      <div id="calculator"  data-tab-content>
+        <h3>계산기</h3>
+        <div class="calculator">
+          <form class="inner" name="forms">
+            <input type="text" name="output" readonly id="output">
+            <input type="button" value="C" id="clear" class="clear">
+            <input type="button" value="+-" id="plus_minus" class="operator_more">
+            <input type="button" value="%" id="percent" class="operator_more">
+            <input type="button" value="/" id="divide" class="operator">
+            <input type="button" value="7" class="num">
+            <input type="button" value="8" class="num">
+            <input type="button" value="9" class="num">
+            <input type="button" value="x" id="multiply" class="operator">
+            <input type="button" value="4" class="num">
+            <input type="button" value="5" class="num">
+            <input type="button" value="6" class="num">
+            <input type="button" value="-" id="minus" class="operator">
+            <input type="button" value="1" class="num">
+            <input type="button" value="2" class="num">
+            <input type="button" value="3" class="num">
+            <input type="button" value="+" id="plus" class="operator">
+            <input type="button" value="0" class="num zero" >
+            <input type="button" value="." id="point" class="dot">
+            <input type="button" value="=" id="result" class="result">
+          </form>
+        </div>
+      </div>
+
+      <!-- number game -->
+      <div id="num_game" class="num_game" data-tab-content>
+        <h3>숫자야구게임</h3>
+        <div class="inner">
+          <div class="chances">
+            <p>남은 기회</p>
+            <p class="chances_text">10번</p>
+            <p class="chances_error"></p>
+          </div>
+          <form class="num_game__form">
+            <input type="text">
+            <button>확인</button>
+          </form>
+          <ul class="logs">
+            <li>
+              <strong>1234</strong>
+              <span>0 스트라이크 2 볼</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- slide -->
+      <div id="slide" class="slide" data-tab-content>
+        <h3>slide</h3>
+        <div class="inner">
+          <ul class="slides">
+            <li><img src="image/flower.jpg" alt=""></li>
+            <li><img src="image/fox.jpg" alt=""></li>
+            <li><img src="image/lightning.jpg" alt=""></li>
+            <li><img src="image/moon.jpg" alt=""></li>
+            <li><img src="image/nature.jpg" alt=""></li>
+            <li><img src="image/space.jpg" alt=""></li>
+          </ul>
+          <p class="controller">
+            <i class="fa-solid fa-angle-left prev"></i>
+            <i class="fa-solid fa-angle-right next"></i>
+          </p>
+        </div>
+      </div>
+      <!-- calendar -->
+      <div id="a" data-tab-content>
+        <h3>calendar</h3>
+      </div>
+      </div>
+      <!-- calendar -->
+      <div id="b" data-tab-content>
+        <h3>calendar</h3>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/main.js"></script>
+<script src="js/today.js"></script>
+<script src="js/lotto.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/num_gmae.js"></script>
+<script src="js/slide.js"></script>
+
+</html>

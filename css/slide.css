@@ -1,0 +1,50 @@
+/* 보여줄 구간, 높이 설정 */
+.slide .inner {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* 슬라이드 할 사진과 마진 총 넓이 */
+  /* width: 2500px;  */
+  display: flex;
+  transition: all 500ms ease-in-out;
+}
+
+
+.slides li:first-child {
+  /* 중간 정렬 */
+  margin-left: 100px;
+}
+
+.slides li:not(:last-child) {
+  margin-right: 100px;
+}
+
+/* controller 위치 및 hover 효과 주기 */
+.controller i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+.controller i:hover {
+  color: tomato;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}

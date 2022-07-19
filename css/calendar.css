@@ -1,0 +1,21 @@
+:root {
+  --main_bg: rgb(40,40,59);
+  --cal_border: rgb(220,220,255);
+  --cal_bg: #fff;
+  --cal_color: #444;
+}
+
+
+.calendar {
+  background: var(--main_bg);
+}
+
+
+.calendar .inner {
+  width: 360px;
+  margin: 3em auto;
+  padding: 2em;
+  border: 1px solid var(--cal_border);
+  border-radius: 3px;
+  color: var(--cal_color);
+}

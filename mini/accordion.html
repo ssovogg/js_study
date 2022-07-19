@@ -1,0 +1,90 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tabs {
+      display: flex;
+    }
+
+    .tab {
+      text-align: center;
+      line-height: 30px;
+      width: 90px;
+      height: 30px;
+      cursor: pointer;
+      background: #eee;
+    }
+
+    .tab:hover,
+    .tab:active {
+      background: #ccc;
+    }
+
+
+    .content {
+      width: 500px;
+      background: #eee;
+    }
+
+    .items {
+      width: 90%;
+      margin: 20px auto;
+      background: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- tab menu -->
+
+  <div class="main">
+    <div class="tabs">
+      <div class="tab" data-tab-target="#tab1">tab 1</div>
+      <div class="tab" data-tab-target="#tab2">tab 2</div>
+      <div class="tab" data-tab-target="#tab3">tab 3</div>
+    </div>
+
+    <!-- tab content -->
+    <div class="content">
+      <div id="tab1" class="items" data-tab-content>
+        <h2>Tab 1</h2>
+        <p>Tab contents~!</p>
+      </div>
+      <div id="tab2"class="items" data-tab-content>
+        <h2>Tab 2</h2>
+        <p>Tab contents~!</p>
+      </div>
+      <div id="tab3" class="items" data-tab-content>
+        <h2>Tab 3</h2>
+        <p>Tab contents~!</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+<script>
+  const tabBtns = document.querySelectorAll("[data-tab-target]")
+  const tabConts = document.querySelectorAll("[data-tab-content]")
+  tabBtns.forEach((tab)=>{
+    tab.addEventListener("click", ()=> {
+      const target = document.querySelector()
+    })
+  })
+</script>
+</html>

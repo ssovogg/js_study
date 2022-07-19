@@ -1,0 +1,298 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'PyeongChangPeace-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EarlyFontDiary';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  border: none;
+  vertical-align: center;
+}
+
+body {
+  font-family: 'PyeongChangPeace-Bold';
+  background: #333;
+}
+
+.wrap {
+  padding: 30px;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* tab title */
+.tabs {
+  display: flex;
+}
+
+.tabs li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: #aaa;
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 200ms;
+}
+.tabs li:hover {
+  background: #fff;
+}
+.material-icons {
+  font-size: 40px;
+}
+
+.tabs .active {
+  background: #fff;
+}
+
+/* tab container */
+[data-tab-content] {
+  display: none;
+  width: 100%;
+  height: 70%;
+  padding: 50px;
+}
+
+.active[data-tab-content] {
+  display: block;
+  width: 100%;
+  height: 70%;
+  background: #fff;
+}
+
+.tab_content h3 {
+  font-size: 2.5em;
+  border-bottom: 5px solid #333;
+  margin-bottom: 30px;
+}
+
+/* lotto */
+.lotto .inner {
+  position: relative;
+  display: flex;
+  height: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.lotto .inner button {
+  position: absolute;
+  top: -55px;
+  right: 0;
+  color: #fff;
+  background: #333;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-family: 'EarlyFontDiary';
+  cursor: pointer;
+}
+.lotto .inner button:hover {
+  background: tomato;
+}
+.lotto .inner h4 {
+  padding-top: 30px;
+  font-size: 1.1em;
+}
+.lotto .inner div {
+  height: 55px;
+}
+
+.lotto .ball {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  margin: 3px;
+  background: tomato;
+  color: #fff;
+}
+
+/* calculator */
+.calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calculator .inner {
+  margin-top: 30px;
+  display: grid;
+  gap: 13px;
+  justify-content: center;
+  align-content: center;
+  width: 330px;
+  height: 80%;
+  padding: 15px 15px 25px;
+  background: #555;
+  border-radius: 15px;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: 120px repeat(5, 60px);
+}
+
+.calculator input[type=text] {
+  grid-column: span 4;
+  border: 0;
+  color: #fff;
+  font-size: 3em;
+  background: #555;
+  text-align: right;
+  font-weight: lighter;
+  padding-top: 20px;
+  border-radius: 15px 15px 0 0;
+}
+
+.calculator input {
+  background: #aaa;
+  color: #fff;
+  font-size: 2em;
+  border: none;
+  border-radius: 50%;
+  transition: all 300ms;
+}
+.calculator input[type=button] {
+  cursor: pointer;
+}
+.calculator input[type=button]:hover{
+  opacity: .8;
+}
+.calculator input[type=button]:active{
+  transform: scale(0.8);
+}
+.calculator .clear,
+.calculator .operator_more {
+  background: #777;
+}
+
+.calculator .operator,
+.calculator .result {
+  background: orange;
+}
+.calculator .zero {
+  grid-column: span 2;
+  border-radius: 40px;
+}
+
+.result {
+  border-radius: 0 0 15px 0;
+}
+
+/* num_game */
+.num_game {}
+.num_game .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eee;
+  padding: 30px;
+  height: 85%;
+}
+
+.chances {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  border-radius: 30px 30px 0 0;
+  background: tomato;
+  color: #fff;
+}
+
+.chances_text {
+  font-size: 1.2em;
+}
+
+.num_game__form {
+  display: flex;
+  width: 300px;
+}
+
+.num_game__form input {
+  line-height: 40px;
+  font-size: 1.3em;
+  text-align: center;
+  letter-spacing: 3px;
+  width: 75%;
+  font-family: 'PyeongChangPeace-Bold';
+  border: none;
+}
+.num_game__form input:focus {
+  outline: none;
+}
+.num_game__form button {
+  width: 25%;
+  border: none;
+  background: #555;
+  color: #fff;
+  font-family: 'PyeongChangPeace-Bold';
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.logs {
+  height: 70%;
+  padding: 30px;
+  color: #fff;
+  background: #333;
+  width: 300px;
+  text-align: center;
+  font-family: 'EarlyFontDiary';
+  border-radius: 0 0 30px 30px;
+}
+
+.logs li strong {
+  position: relative;
+  color: tomato;
+  font-family: 'PyeongChangPeace-Bold';
+  letter-spacing: 3px;
+  padding-right: 25px;
+}
+
+.logs li strong::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 15px;
+  width: 2px;
+  background: tomato;
+  margin-right: 10px;
+}
