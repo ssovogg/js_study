@@ -32,3 +32,11 @@ nextBtn.addEventListener('click', ()=>{
     moveSlide(currentIndex+1);
   }
 })
+
+// https://devinus.tistory.com/43?category=983141
+const slideB = document.querySelector('.slides_2');
+let slideBWidth = slideB.clientWidth;
+console.log(slideBWidth);
+
+const prevBtnB = document.querySelector('.slides_2 i .prev');
+const nextBtnB = document.querySelector('.slides_2 i .next');

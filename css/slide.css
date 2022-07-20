@@ -48,3 +48,34 @@
 .next {
   right: 10px;
 }
+
+
+/* slide_2 */
+.slides_2 {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.slide_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+}
+
+.slides_2 i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.slides_2 i:hover {
+  color: #fff;
+}
