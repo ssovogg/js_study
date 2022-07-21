@@ -8,6 +8,7 @@
   <script src="https://kit.fontawesome.com/fbdf0195b9.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
+  <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -17,32 +18,32 @@
         <a href="index.html" class="logo">Soostagram</a>
         <ul class="gnb">
           <li><i class="fa-solid fa-house"></i></li>
-          <li><i class="fa-regular fa-message"></i></li>
+          <li><i class="fa-regular fa-paper-plane"></i></li>
           <li><i class="fa-regular fa-square-plus"></i></li>
           <li><i class="fa-regular fa-compass"></i></li>
           <li><i class="fa-regular fa-heart"></i></li>
           <li class="gnb_mypage">
-            <img src="img/pic3.jpeg" alt="" class="header_user">
-            <ul class="sub_menu">
+            <img src="img/pic3.jpeg" alt="" class="header_user ">
+            <ul class="sub_menu hidden">
               <li><a href="#">
-                <i class="fa-regular fa-circle-user"></i>
-                프로필
-              </a>
+                  <i class="fa-regular fa-circle-user"></i>
+                  프로필
+                </a>
               </li>
               <li><a href="#">
-                <i class="fa-regular fa-bookmark"></i>
-                북마크
-              </a>
+                  <i class="fa-regular fa-bookmark"></i>
+                  북마크
+                </a>
               </li>
               <li><a href="#">
-                설정
-              </a></li>
+                  설정
+                </a></li>
               <li><a href="">
-                계정전환
-              </a></li>
+                  계정전환
+                </a></li>
               <li><a href="">
-                로그아웃
-              </a></li>
+                  로그아웃
+                </a></li>
             </ul>
           </li>
         </ul>
@@ -59,14 +60,62 @@
             </li>
             <li>
               <img src="img/pic2.jpeg"></img>
-              <span>hutomaki</span>
+              <span>dallyo</span>
+            </li>
+            <li>
+              <img src="img/pic3.jpeg"></img>
+              <span>ss_vely</span>
+            </li>
+            <li>
+              <img src="img/pic1.jpeg"></img>
+              <span>ssoo_oogg</span>
+            </li>
+            <li>
+              <img src="img/pic2.jpeg"></img>
+              <span>dallyo</span>
+            </li>
+            <li>
+              <img src="img/pic3.jpeg"></img>
+              <span>ss_vely</span>
+            </li>
+            <li>
+              <img src="img/pic1.jpeg"></img>
+              <span>ssoo_oogg</span>
+            </li>
+            <li>
+              <img src="img/pic2.jpeg"></img>
+              <span>dallyo</span>
+            </li>
+            <li>
+              <img src="img/pic3.jpeg"></img>
+              <span>ss_vely</span>
+            </li>
+            <li>
+              <img src="img/pic1.jpeg"></img>
+              <span>ssoo_oogg</span>
+            </li>
+            <li>
+              <img src="img/pic2.jpeg"></img>
+              <span>dallyo</span>
+            </li>
+            <li>
+              <img src="img/pic3.jpeg"></img>
+              <span>ss_vely</span>
+            </li>
+            <li>
+              <img src="img/pic1.jpeg"></img>
+              <span>ssoo_oogg</span>
+            </li>
+            <li>
+              <img src="img/pic2.jpeg"></img>
+              <span>dallyo</span>
             </li>
             <li>
               <img src="img/pic3.jpeg"></img>
               <span>ss_vely</span>
             </li>
           </ul>
-          <i class="prev fa-solid fa-circle-chevron-left"></i>
+          <i class="prev fa-solid fa-circle-chevron-left hidden"></i>
           <i class="next fa-solid fa-circle-chevron-right"></i>
         </div>
       </section>
@@ -79,25 +128,35 @@
               <div class="pid_header">
                 <a href="#" class="profile">
                   <img src="img/pic1.jpeg" alt="">
-                  <span>ssoo_oogg</span>
+                  <span class="user_id">ssoo_oogg</span>
                 </a>
-                <i class="fa-solid fa-question"></i>
+                <i class="fa-solid fa-ellipsis"></i>
               </div>
               <!-- img -->
-              <img src="img/pic3.jpeg" alt="" class="content">
+              <div class="pid_img_wrap">
+                <div class="pid_img">
+                  <ul class="pid_img_list">
+                    <li><img src="img/pic3.jpeg" alt="" class="content"></li>
+                    <li><img src="img/pic1.jpeg" alt="" class="content"></li>
+                    <li><img src="img/pic2.jpeg" alt="" class="content"></li>
+                  </ul>
+                </div>
+                <i class="img_prev fa-solid fa-circle-chevron-left hidden"></i>
+                <i class="img_next fa-solid fa-circle-chevron-right"></i>
+              </div>
               <!-- buttons -->
               <ul class="pid_btns">
                 <li>
-                  <i class="fa-regular fa-heart fa-solid active"></i>
+                  <i class="fa-regular fa-heart"></i>
                   <i class="fa-regular fa-comment"></i>
-                  <i class="fa-regular fa-font-awesome"></i>
+                  <i class="fa-regular fa-paper-plane"></i>
                 </li>
                 <li><i class="fa-regular fa-bookmark bookmark"></i></li>
               </ul>
               <!-- pid conte t -->
               <div class="pid_content">
                 <a href="#" class="like">
-                  <strong>여러 명</strong>
+                  <strong>1명</strong>
                   <span>이 좋아합니다.</span>
                 </a>
                 <span class="pid_owner">
@@ -106,9 +165,32 @@
                 </span>
                 <button class="comment">댓글 1개 보기</button>
                 <span class="upload">1일 전</span>
+                <form class="comment_form">
+                  <i class="fa-regular fa-face-smile"></i>
+                  <input type="text" placeholder="댓글 달기...">
+                  <button>게시</button>
+                </form>
+                <!-- 댓글창 -->
+                <ul class="user_comments hidden">
+                  <li class="user_comment_list">
+                    <a href="#" class="profile">
+                      <img src="img/pic1.jpeg" alt="">
+                    </a>
+                    <div class="user_comment">
+                      <a href="#" class="user_id">ssoo_oogg</a>
+                      <span class="user_text">집 가고 싶니?</span>
+                      <p class="comment_info">
+                        <span>10시간</span>
+                        <span class="comment_like">좋아요 1개</span>
+                        <span class="comment_comment">답글 달기</span>
+                      </p>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
+                  </li>
+                </ul>
               </div>
             </li>
-  
+
           </ul>
         </div>
       </section>

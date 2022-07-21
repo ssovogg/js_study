@@ -1,16 +1,19 @@
-.inner {
-  padding: 0 20px;
-}
-
 header {
+  background: var(--white);
   border-bottom: 1px solid var(--grey);
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 header .inner {
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   background: var(--white);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -23,7 +26,7 @@ header .inner {
 }
 
 .gnb li {
-  margin-left: 20px;
+  margin-left: 23px;
   font-size: 1.4em;
   cursor: pointer;
 }
@@ -32,9 +35,13 @@ header .inner {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1.5px solid black;
   padding: 1px;
 }
+
+.gnb_active {
+  border: 1.5px solid black;
+}
+
 .gnb_mypage {
   position: relative;
 }
@@ -51,7 +58,7 @@ header .inner {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .sub_menu {
-  /* display: none; */
+  display: block;
   position: absolute;
   top: 40px;
   right: -15px;
@@ -63,6 +70,8 @@ header .inner {
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+
 .sub_menu li a {
   display: block;
   padding: 10px 0;
@@ -78,11 +87,12 @@ header .inner {
 .main {
   width: 500px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* ---------- story ---------- */
 .story {
-  padding: 25px 0 10px;
+  padding: 25px 0 15px;
 }
 .story .inner {
   position: relative;
@@ -95,6 +105,7 @@ header .inner {
   background: var(--white);
   padding: 20px 20px 15px;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 .story_list li {
   display: flex;
@@ -143,16 +154,18 @@ header .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 15px;
 }
-.profile {}
+.profile {
+}
 .profile img {
+  border: 1px solid var(--grey-light);
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 5px;
 }
-.profile span {
+.user_id {
   font-size: 0.9em;
   font-weight: bold;
 }
@@ -162,8 +175,41 @@ header .inner {
   font-size: 1.1em;
 }
 
+.pid_img_wrap {
+  position: relative;
+}
+.pid_img {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.pid_img_list {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 500px;
+}
+
 .content {
-  width: 100%;
+  width: 468px;  
+}
+
+.pid_img_wrap i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--white);
+  font-size: 1.5em;
+  text-shadow:0px 0px 5px rgba(0,0,0,.3);
+  cursor: pointer;
+  opacity: .6;
+}
+
+.img_prev {
+  left: 10px;
+}
+
+.img_next {
+  right: 10px;
 }
 
 .pid_btns {
@@ -174,10 +220,14 @@ header .inner {
 }
 
 .pid_btns li i {
-  margin-right: 10px;
+  margin-right: 15px;
   cursor: pointer;
+  transition: transform 100ms ease-in;
 }
 
+.pid_btns li i:active {
+  transform: scale(1.2);
+}
 .active {
   color: var(--red);
 }
@@ -212,4 +262,73 @@ header .inner {
 .upload {
   color: var(--grey-dark);
   font-size: 0.7em;
+  padding-bottom: 10px;
+}
+
+.comment_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid var(--grey-light);
+}
+
+.comment_form i {
+  font-size: 1.5em;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.comment_form input {
+  border: none;
+  flex-grow: 1;
+}
+.comment_form input:focus {
+  outline: none;
+}
+.comment_form button {
+  all: unset;
+  color: var(--blue);
+  cursor: pointer;
+  opacity: .4;
+}
+
+.user_comments {
+  border-top: 1px solid var(--grey-light);
+  padding-top: 15px;
+}
+
+.user_comment_list {
+  display: flex;
+  justify-content: space-between;
+}
+.user_comment {
+  flex-grow: 1;
+  padding-top: 3px;
+  padding-left: 10px;
+}
+.user_text {
+  font-size: 0.9em;
+}
+.comment_info {
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: var(--grey-dark);
+}
+
+.comment_info span {
+  margin-right: 15px;
+}
+
+.comment_like,
+.comment_comment {
+  cursor: pointer;
+}
+
+/* classList */
+.hidden {
+  display: none;
+}
+
+.btn_active {
+  opacity: 1 !important;
 }
