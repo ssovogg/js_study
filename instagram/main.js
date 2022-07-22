@@ -28,13 +28,13 @@ const storyNextBtn = document.querySelector('.story .next');
 storyNextBtn.addEventListener('click', () => {
   storyPrevBtn.classList.remove('hidden');
   storyList.scrollLeft += 330;
-  storyList.addEventListener('scroll', () => {
-    if (storyList.offsetWidth + storyList.scrollLeft >= storyList.scrollWidth) {
-      storyNextBtn.classList.add('hidden');
-    } else {
-      storyNextBtn.classList.remove('hidden');
-    }
-  })
+})
+storyList.addEventListener('scroll', () => {
+  if (storyList.offsetWidth + storyList.scrollLeft >= storyList.scrollWidth) {
+    storyNextBtn.classList.add('hidden');
+  } else {
+    storyNextBtn.classList.remove('hidden');
+  }
 })
 
 storyPrevBtn.addEventListener('click', ()=>{
@@ -49,6 +49,12 @@ storyPrevBtn.addEventListener('click', ()=>{
 // pid img slide 
 const pidImg = document.querySelector('.pid_img');
 const pidImgList = pidImg.querySelectorAll('li');
+const imgRects = [];
+pidImgList.forEach(img => {
+  let imgRect = img.getBoundingClientRect();
+  imgRects.push(imgRect.left);
+})
+console.log(imgRects);
 const pidPrevBtn = document.querySelector('.img_prev');
 const pidNextBtn = document.querySelector('.img_next');
 let currentImg = 0;
@@ -62,10 +68,50 @@ pidPrevBtn.addEventListener('click', ()=>{
   currentImg -= 1;
 })
 
-pidImg.addEventListener('scroll', ()=>{
+pidImg.addEventListener('scroll', showPidBtn);
+
+
+
+// pagination
+/**
+ * 이미지 개수만큼 버튼이 들어갈 li 생성 (pidImgList.length)
+ * 버튼 클릭시 이미지 위치 이동
+ * 생성한 li 화면상에 보이게 하기
+ * 현재 보이는 이미지에 해당하는 li에 pg_active 클래스 넣기
+ */
+const pagination = document.querySelector('.pagination');
+for(let i = 0; i < pidImgList.length; i++){
+  makePgBtn(i);
+}
+
+function makePgBtn (currentImgNum){
+  const li = document.createElement('li');
+  li.id = currentImgNum;
+  li.addEventListener('click', ()=>{
+    pidImg.scrollTo(imgRects[li.id]-16, 0);
+    currentImg = li.id;
+    console.log(currentImg);
+  });
+  pagination.appendChild(li);
+  pidImg.addEventListener('scroll', ()=>{
+    pgBtnActive(li);
+    showPidBtn();
+  })
+  pgBtnActive(li);
+}
+
+function showPidBtn (){
   (currentImg !== pidImgList.length - 1) ? pidNextBtn.classList.remove('hidden') : pidNextBtn.classList.add('hidden');
   (currentImg !== 0) ? pidPrevBtn.classList.remove('hidden') : pidPrevBtn.classList.add('hidden')
-})
+};
+
+function pgBtnActive(li){
+  if (li.id == currentImg){
+    li.classList.add('pg_active');
+  } else {
+    li.classList.remove('pg_active');
+  }
+}
 
 // pid event
 const likeBtn = document.querySelector('.pid_btns .fa-heart');

@@ -11,7 +11,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/login.css">
-  <script src="js/login.js" defer></script>
+  <script src="js/signin.js" defer></script>
 </head>
 
 <body>
@@ -20,25 +20,30 @@
     <!-- login form -->
     <section class="login">
       <a href="#" class="logo">Soostagram</a>
-      <form class="login_form">
-        <input type="text" class="user_name" placeholder="전화번호, 사용자 이름 또는 이메일" value="">
-        <input type="password" class="user_pw" placeholder="비밀번호" value="">
-        <span class="error">비밀번호는 영문, 숫자를 포함하여 3~16글자이어야 합니다.</span>
-        <a href="index.html" class="login_btn">로그인</a>
-      </form>
+      <h2 class="introduce">친구들의 사진과 동영상을 보려면 가입하세요.</h2>
       <div class="login_more">
-        <p>또는</p>
-        <a href="#" class="facebook">
+        <a href="#" class="facebook_login">
           <i class="fa-brands fa-facebook-square"></i>
           <span>Facebook으로 로그인</span>
         </a>
-        <a href="#" class="forget">비밀번호를 잊으셨나요?</a>
+        <p>또는</p>
       </div>
+      <form class="login_form">
+        <input type="text" class="user_id" placeholder="휴대폰 번호 또는 이메일 주소" value="">
+        <input type="text" class="user_name" placeholder="성명" value="">
+        <input type="text" class="user_nickname" placeholder="사용자 이름" value="">
+        <input type="password" class="user_pw" placeholder="비밀번호" value="">
+        <p class="notice">
+          서비스를 이용하는 사람이 회원님의 연락처 정보를 Instagram에 업로드했을 수도 있습니다. 
+          <a href="#">더 알아보기</a>
+        </p>
+        <button class="login_btn">가입</button>
+      </form>
     </section>
     <!-- sign in -->
     <section class="signin">
-      <span>계정이 없으신가요?</span>
-      <a href="signin.html">가입하기</a>
+      <span>계정이 있으신가요?</span>
+      <a href="login.html">로그인</a>
     </section>
     <!-- download -->
     <section class="download">

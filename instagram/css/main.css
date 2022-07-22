@@ -71,17 +71,32 @@ header .inner {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.sub_menu::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(0,0,0,.1);
+  position: absolute;
+  right: 0;
+  top: 160px;
+}
 
 .sub_menu li a {
   display: block;
   padding: 10px 0;
 }
 .sub_menu li a i {
-  margin-right: 5px;
+  margin-right: 8px;
+  text-align: center;
 }
 
-.sub_menu li:last-child {
-  border-top: 1px solid var(--grey);
+.sub_menu li:nth-child(2) i {
+  margin-left: 1.7px;
+}
+
+.logout_btn {
+  margin-top: 10px;
 }
 /* ---------- main ---------- */
 .main {
@@ -212,6 +227,29 @@ header .inner {
   right: 10px;
 }
 
+.pagination {
+  position: absolute;
+  top: 103%;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+}
+.pagination li {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--grey-dark);
+  margin-right: 5px;
+  cursor: pointer;
+}
+.pagination li:last-child {
+  margin-right: 0;
+}
+.pg_active {
+  background-color: var(--blue) !important;
+}
+
 .pid_btns {
   padding: 10px 15px 15px;
   display: flex;
@@ -225,6 +263,9 @@ header .inner {
   transition: transform 100ms ease-in;
 }
 
+.pid_btns li i:hover {
+  opacity: .5;
+}
 .pid_btns li i:active {
   transform: scale(1.2);
 }
@@ -249,6 +290,11 @@ header .inner {
 
 .pid_owner strong {
   margin-right: 5px;
+  cursor: pointer;
+}
+
+.pid_owner strong:hover {
+  text-decoration: underline;
 }
 
 .comment {
