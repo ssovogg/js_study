@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+header {
+  margin-bottom: 10px;
+}
+
+.btns {
+display: flex;
+justify-content: space-between;
+}
+
+.btns button {
+  border: 0;
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.day {
+  display: grid;
+  grid-template-columns: repeat(7, 70px);
+  background: #eee;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.day li {
+  line-height: 2;
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, 70px);
+  grid-auto-rows: 70px;
+  /* grid-template-rows: repeat(5, 70px); */
+}
+
+.dates li {
+  padding: 5px;
+}
+
+.day li:first-child,
+.dates li:nth-child(7n+1) {
+  color: blue;
+}
+
+.day li:last-child,
+.dates li:nth-child(7n) {
+  color: red;
+}
+
+.dates .otherDate {
+  opacity: 0.3;
+}
+
+.its-today {
+  background: tomato;
+}
