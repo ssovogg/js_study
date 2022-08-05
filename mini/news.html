@@ -1,0 +1,95 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>news</title>
+    <link rel="stylesheet" href="news.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <header>
+        <h1>NEWS</h1>
+        <p>오늘의 뉴스</p>
+      </header>
+      <!-- main -->
+      <main class="content">
+        <!-- top-news -->
+        <section class="top-news-section">
+          <h2>Top News</h2>
+          <aricle id="topNewsList">
+            <div class="spinner-area"></div>
+          </aricle>
+        </section>
+        <aside>
+          <!-- latest -->
+          <section class="latest-section">
+            <h3>최신 글</h3>
+            <ul class="latest-news-list">
+              <div class="spinner-area"></div>
+            </ul>
+          </section>
+          <!-- support -->
+          <section class="support-section">
+            <h3>Support</h3>
+            <div class="github-support">
+              <a href="#">
+                <svg
+                  viewBos="0 0 16 16"
+                  width="16"
+                  height="16"
+                  class="heart"
+                  aria-hidden="true"
+                >
+                  <!-- <path fill-rule="evenodd" d="#"></path> -->
+                </svg>
+                GitHub Sponsors
+              </a>
+            </div>
+          </section>
+        </aside>
+      </main>
+      <!-- footer -->
+      <footer>ssovogg.com &copy; 2021</footer>
+    </div>
+  </body>
+  <script>
+    // Top News와 최신 글 영역 렌더링
+    function renderTopNews() {
+      const articleSection = document.querySelector("#topNewsList");
+      createSpinner(articleSection);
+      // 최신 글 데이터 조회 후 DOM에 추가
+      setTimeout(()=>{
+        fetch("./data/top.json")
+          .then((res) => res.json)
+          .then((data) => {
+            const { articles } = data;
+          });
+
+      }, 1500);
+    }
+    function renderLatestNews() {
+      const latestNestList = document.querySelector(".latest-news-list");
+      createSpinner(latestNestList);
+      fetch("./data/latest.json")
+        .then((res) => res.json)
+        .then((data) => console.log(data));
+    }
+
+    // DOMContentLoaded : 브라우저가 HTML을 모두 파싱하여 DOM트리를 완성하는 즉시 발생하는 이벤트
+    document.addEventListener("DOMContentLoaded", () => {
+      renderTopNews();
+      renderLatestNews();
+    });
+
+    // 로딩이미지 보여주기
+    function createSpinner(parent) {
+      const spinnerArea = parent.querySelector(".spinner-area");
+      const image = document.createElement("img");
+      image.alt = "spinner";
+      image.src = "./image/spinner.gif";
+      spinnerArea.append(image);
+    }
+  </script>
+</html>

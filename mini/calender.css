@@ -1,43 +1,89 @@
+@font-face {
+  font-family: 'MabinogiClassicR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 ul, li {
   list-style: none;
 }
-.wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
+
+body {
+  background: #140f07;
+  font-family: 'MabinogiClassicR';
 }
 
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin: 60px auto;
+  max-width: 800px;
+  min-width: 400px;
+}
+
+.cal {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+}
+
+/* header */
 header {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #525c9c;
 }
 
 .btns {
 display: flex;
 justify-content: space-between;
+margin-top: 5px;
+border-radius: 10px;
+overflow: hidden;
 }
 
 .btns button {
   border: 0;
-  background: #333;
+  background: #202543;
   color: #fff;
-  padding: 5px;
+  padding: 0 10px;
   cursor: pointer;
+  text-align: center;
+  height: 30px;
+  transition: background 100ms ease-in-out;
+font-family: inherit;
+}
+
+.btns button:hover {
+  background: peru;
+}
+
+/* calender */
+.calender {
+  width: 100%;
 }
 
 .day {
   display: grid;
-  grid-template-columns: repeat(7, 70px);
-  background: #eee;
+  grid-template-columns: repeat(7, 1fr);
   text-align: center;
   border-radius: 5px;
+  color: #555;
 }
 
 .day li {
@@ -46,29 +92,149 @@ justify-content: space-between;
 
 .dates {
   display: grid;
-  grid-template-columns: repeat(7, 70px);
-  grid-auto-rows: 70px;
-  /* grid-template-rows: repeat(5, 70px); */
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 100px;
 }
 
 .dates li {
-  padding: 5px;
+  color: #555;
+  padding: 8px 5px;
+  border-radius: 10px;
+}
+
+.dates li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: background 150ms ease-in;
+}
+
+.dates li:hover {
+  background: #202543;
 }
 
 .day li:first-child,
 .dates li:nth-child(7n+1) {
-  color: blue;
+  color: #525c9c;
 }
 
 .day li:last-child,
 .dates li:nth-child(7n) {
-  color: red;
+  color: #b34e69;
 }
 
 .dates .otherDate {
   opacity: 0.3;
 }
 
-.its-today {
-  background: tomato;
+.dates .its-today {
+  color: #fff;
+  background: #202543;
+}
+
+/* todo list */
+.todo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: #202543;
+  padding: 30px 20px;
+  color: #dae4f6;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+/* todo - todo header */
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-btn {
+  border: none;
+  background: transparent;
+  color: #525c9c;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.create-btn:hover {
+  color: peru;;
+}
+
+/* todo - create form */
+.create-form {
+  display: flex;
+}
+
+.create-form input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px ;
+  border-radius: 10px 0 0 10px;
+  background: #dae4f6;
+  font-family: inherit;
+  font-size: 1.2rem;
+}
+
+.create-form input:focus {
+  outline: 1px solid #333;
+}
+
+.create-form button {
+  border: none;
+  background-color: #525c9c;
+  border-radius: 0 10px 10px 0;
+  width: 30px;
+  cursor: pointer;
+}
+
+.create-form button:hover {
+  background: peru;
+}
+
+
+/* todo - todo list */
+.todo-list {
+  padding: 10px 0 ;
+}
+.todo-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.3rem;
+}
+
+.todo-list li span {
+  flex-grow: 1;
+}
+
+.todo-check {
+  all: unset;
+  color: peru;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.todo-checked {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.fa-square-check {
+  color: #525c9c;
+}
+
+.todo-edit,
+.todo-delete {
+  all: unset;
+  color: #525c9c;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.todo-list li button:hover {
+  color: peru;
 }
