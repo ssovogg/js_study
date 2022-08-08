@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    
+  </body>
+  <script>
+    // 1. indexedDB 객체 가져오기
+    const indexeDB = window.indexedDB;
+
+    // 2. 브라우저에서 지원하는지 체크
+    if(!indexeDB) window.alert('해당 브라우저는 indexedDB를 지원하지 않습니다.')
+    else {
+      let db;
+      // 3. sampleDB(db) 열기
+      const request = indexeDB.open('sampleDB');
+
+      // 4. name 저장소 생성, key는 id로 지정
+      request.onupgradeneeded = (e) => {
+        db = e.target.result;
+        db.createObjectStore('name', {keyPath: 'id'});
+      }
+
+      request.onerror = (e) => alert('failed');
+      // 5. 성공시 db에 result 저장
+      request.onsuccess = (e) => db = request.result;
+    }
+
+    const names = [{id:1, name:'a'}, {id:2, name:'b'}, {id:3, name:'c'}];
+    
+    function writeIdxedDB(names) {
+      const request = window.indexedDB.open('sampleDB');
+      request.onerror = (e) => {
+        alert('Database error', e.target.errorCode);
+      }
+      request.onsuccess = (e) => {
+        const db = request.result;
+        const transaction = db.transaction(['name'], 'readWrite');
+
+        // 완료, 실패 이벤트 처리
+        transaction.oncomplete = (e) => {
+          console.log('success');
+        }
+        transaction.onerror = (e) => {
+          console.log('fail');
+        }
+
+        // transaction으로
+        const objStore = transaction.objectStore('name');
+        for (const name of names) {
+          const request = objStore.add(name);
+          request.onsuccess = (e) => console.log(e.target.result);
+        }
+      }
+    }
+  </script>
+</html>

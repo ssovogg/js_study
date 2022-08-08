@@ -1,0 +1,62 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax를 써보자</title>
+  </head>
+  <body>
+    <h1><a href="#!welcome" onclick="fetchPage('welcome')">WEB</a></h1>
+    <input type="button" id="night_day" value="night" />
+    <ol id="nav"></ol>
+    <input type="button" value="fetch" id="fetch" />
+    <article></article>
+  </body>
+  <script>
+    function fetchPage(name) {
+      fetch(name).then((res) => {
+        res.text().then((text) => {
+          document.querySelector("article").innerHTML = text;
+        });
+      });
+    }
+
+    // page 안에서 특정 부분으로 이동하기
+    // how to get url hash from javascript, how to get sub stirng from javascript
+    if (location.hash) {
+      fetchPage(location.hash.substr(2));
+    } else {
+      fetchPage("welcome");
+    }
+
+    fetch("list").then((res) => {
+      res.text().then((text) => {
+        //<li><a href="#!css" onclick="fetchPage('css')">css</a></li>
+        // how to make array from string in javascript
+        const items = text.split(',');
+        console.log(items);
+        let tags = '';
+        for (const item of items){
+          const tag = `<li><a href="#!${item}" onclick="fetchPage('${item}')">${item}</a></li>`
+          tags = tags + tag;
+          console.log(tag);
+        }
+        document.querySelector("#nav").innerHTML = tags;
+      });
+    });
+  </script>
+  <!-- <script>
+    // fetch('요청할 파일')
+    // .then(응답후 실행할 콜백함수(비동기)) - 콜백함수의 첫번째 인자 : response 객체(응답결과를 담고있는 객체)
+    const fet = document.getElementById("fetch");
+    fet.addEventListener("click", () => {
+      fetch("css").then((response) => {
+        // 요청한 파일이 존재하지 않으면
+        if (response.status === 404) {
+          alert("Not found");
+        }
+        response.text().then((text) => {
+          document.querySelector("article").innerHTML = text;
+        });
+      });
+    });
+  </script> -->
+</html>
