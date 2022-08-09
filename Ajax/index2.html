@@ -1,0 +1,31 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <ul></ul>
+  </body>
+  <script>
+    const load = document.querySelector("h1");
+    let loading = true;
+    let data;
+    const list = document.querySelector("ul");
+    const item = [];
+    fetch("https://api.coinpaprika.com/v1/tickers")
+      .then((res) => res.json())
+      .then((json) => {
+        data = json
+        loading = false;
+      });
+    console.log(Array.isArray(item));
+    console.log(data);
+    const coins = item.map((coin) => `<li>${coin}}</li>`);
+    console.log(coins);
+    list.innerHTML = coins.join("");
+    loading ? (load.innerHTML = "loading...") : null;
+  </script>
+</html>

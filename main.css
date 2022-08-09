@@ -213,7 +213,6 @@ body {
 }
 
 /* num_game */
-.num_game {}
 .num_game .inner {
   display: flex;
   flex-direction: column;

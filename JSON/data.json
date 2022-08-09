@@ -1,0 +1,17 @@
+[
+  {
+    "name": "rabbit",
+    "age": 2,
+    "color": "white"
+  },
+  {
+    "name": "cat",
+    "age": 5,
+    "color": "orange"
+  },
+  {
+    "name": "dog",
+    "age": 1,
+    "color": "black"
+  }
+]

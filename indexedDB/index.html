@@ -1,0 +1,66 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="add" type="button" value="add" />
+    <input id="get_all" type="button" value="get" />
+    <ul id="list"></ul>
+  </body>
+  <script>
+    // DB 생성
+    const dbName = "opentutorials"
+    const appDB = indexedDB.open(dbName, 2);
+    let db;
+
+    // Handle errors
+    appDB.onerror = (event) => {
+      alert('database error: ' + event.target.errorCode);
+    }
+
+    appDB.onsuccess = (event) => {
+      db = appDB.result;  // event.target.result; 와 동일
+      console.log(db);
+    }
+
+    // DB의 구조 변경
+    appDB.onupgradeneeded = function(evnet){
+      db = event.target.result;
+      // 객체 저장소 생성 및 삭제
+      db.createObjectStore('todos', {keyPath:'id', autoIncrement: true});
+    }
+
+    // 트랜잭션 시작 
+    // (데이터베이스 객체 단위로 작동하기 때문에 트랜잭션을 사용할 객체 저장소를 지정해줘야 함)
+    // transaciton([객체저장소 목록], 모드); => 트랜잭션 객체 반환
+    // const transaction = db.transaction('todos', 'readWrite').objectStore('topics');
+    // transaction.oncomplete = (event)=>{alert('transaction done!')}
+    // transaction.onerror = event => alert('transaction error');
+    // data add
+    const addTodo = document.querySelector("#add");
+    addTodo.addEventListener("click", () => {
+      let store = db.transaction('todos', 'readwrite').objectStore('todos');
+      let appDB = store.add({
+        title: prompt('title?'),
+        body: prompt('body?')
+      })
+      appDB.addEventListener('success', function(event){
+        console.log(event);
+      })
+    });
+
+    const getListTodo = document.querySelector('#get_all');
+    const todoList = document.querySelector('#list');
+    const items = [];
+    getTodo.addEventListener('click', ()=>{
+      let store = db.transaction('todos', 'readonly').objectStore('todos');
+      let getAllDB = store.getAll();
+      getAllDB.addEventListener('success', (event)=>{
+        console.log(event.target.result);
+      })
+    })
+  </script>
+</html>
