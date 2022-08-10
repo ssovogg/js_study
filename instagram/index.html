@@ -16,6 +16,7 @@
     <header>
       <div class="inner">
         <a href="index.html" class="logo">Soostagram</a>
+        <input type="text" placeholder="검색" class="header-search">
         <ul class="gnb">
           <li><i class="fa-solid fa-house"></i></li>
           <li><i class="fa-regular fa-paper-plane"></i></li>
@@ -51,6 +52,8 @@
         </ul>
       </div>
     </header>
+    <div class="main-wrap">
+    <!-- main -->
     <section class="main">
       <!-- story -->
       <section class="story">
@@ -169,7 +172,7 @@
                 </span>
                 <button class="comment">댓글 1개 보기</button>
                 <span class="upload">1일 전</span>
-                <form class="comment_form">
+                <form class="comment_form hidden">
                   <i class="fa-regular fa-face-smile"></i>
                   <input type="text" placeholder="댓글 달기...">
                   <button>게시</button>
@@ -199,6 +202,49 @@
         </div>
       </section>
     </section>
+    <!-- aside -->
+    <aside class="aside">
+      <div class="aside-profile">
+        <a href="profile.html" class="aside-myimg"></a>
+        <p class="aside-myname">
+          <a href="profile.html">ssoo_oogg</a>
+          <span>쑥쑥이💚</span>
+        </p>
+        <button>전환</button>
+      </div>
+      <div class="aside-recommend">
+        <div class="recommend-header">
+          <strong>회원님을 위한 추천</strong>
+          <a href="#">모두 보기</a>
+        </div>
+        <ul class="aside-list">
+          <li class="recommend-list">
+            <div class="recommend-profile">
+              <a href="profile.html" class="recommend-img"></a>
+              <p class="recommend-name">
+                <a href="profile.html">infp_dong</a>
+                <span>dongdong</span>
+              </p>
+              <button>팔로우</button>
+          </li>
+        </ul>
+      </div>
+      <ul class="aside-gnb">
+        <li><a href="#">소개</a></li>
+        <li><a href="#">도움말</a></li>
+        <li><a href="#">홍보 센터</a></li>
+        <li><a href="#">API</a></li>
+        <li><a href="#">채용 정보</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">약관</a></li>
+        <li><a href="#">위치</a></li>
+        <li><a href="#">언어</a></li>
+      </ul>
+      <p class="aside-copy">
+        &copy; 2022 INSTAGRAM FROM META
+      </p>
+    </aside>
+    </div>
   </div>
 </body>
 

@@ -99,6 +99,52 @@ body {
 .number {
   font-weight: bold;
 }
+.profile_info_center {
+  display: none;
+}
+
+@media screen and (min-width:710px) {
+  .profile_top {
+    padding: 10vh 10vh;
+  }
+  .profile_img {
+    width: 150px;
+    height: 150px;
+    margin-right: 5vw;
+  }
+  .profile_info {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .profile_info_top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .profile_id .setting {
+    margin-right: 15px;
+  }
+  .profile_edit {
+    width: 85px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .profile_info_center {
+    display: flex;
+    font-size: 1.1rem;
+  }
+  .profile_info_center .title {
+    color: inherit;
+  }
+  .profile_info_center .number {
+    margin-right: 40px;
+  }
+  .profile_text {
+    display: none;
+  }
+}
 
 /* contents */
 .tabs {
@@ -154,6 +200,11 @@ body {
   background-size: cover;
 }
 
+@media screen and (min-width:970px) {
+  .pids {
+    grid-auto-rows: 329px;
+  }
+}
 /* tab 2 */
 .collection {}
 
@@ -222,6 +273,7 @@ body {
   flex-direction: column;
   border-radius: 15px;
   overflow: hidden;
+  transition: width 100ms ease-in;
 }
 
 .setting_menu a {
@@ -251,6 +303,11 @@ body {
   z-index: 999;
 }
 
+@media screen and (min-width:710px) {
+  .setting_menu {
+    width: 400px;
+  }
+}
 .hidden {
   display: none;
 }
